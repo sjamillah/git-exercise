@@ -270,19 +270,3 @@ $ code .
 LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
 $ code Gym-Git-Exercise/
 ```
-Continuation
-``` bash
-jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$
-se$ git pull
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (2/2), done.
-remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)  
-Unpacking objects: 100% (3/3), 1.06 KiB | 11.00 KiB/s, done.
-From https://github.com/sjamillah/git-exercise
-   52b6b6f..9f92303  main       -> origin/main
-Updating 56c8151..9f92303
-Fast-forward
- README.md | 35 +++++++++++++++++++++++++++++++++++
- 1 file changed, 35 insertions(+)
-```
