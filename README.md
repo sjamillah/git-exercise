@@ -20,7 +20,8 @@ This is a file created locally and it will be used for a series of exercises. Th
 `git push origin --delete <branch-name> //pushes the changes and deletes the branch on the repo`
 
 Solution:
-`jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
 On branch main
 
 No commits yet
@@ -223,7 +224,7 @@ remote: This repository moved. Please use the new location:
 remote:   https://github.com/sjamillah/git-exercises.git
 To https://github.com/sjamillah/git-exercise.git
    736641d..5b4bb76  main -> main
-   `
+   ```
 2. Bundle 1-Exercise 2
 - Create a new `home.html` file, add some html changes and save them
 - Stash save your current changes
