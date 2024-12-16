@@ -18,6 +18,212 @@ This is a file created locally and it will be used for a series of exercises. Th
 `git checkout <branch-name>`
 `git branch -D <branch-name> //to delete the branch`
 `git push origin --delete <branch-name> //pushes the changes and deletes the branch on the repo`
+
+Solution:
+`jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git remote add origin https://github.com/sjamillah/git-exercise.git
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)       
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+add .
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+commit -m "learning the basics of GitHub"
+[main (root-commit) e1e6738] learning the basics of GitHub
+ 1 file changed, 12 insertions(+)
+ create mode 100644 README.md
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push --set-upstream origin main^C
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+To https://github.com/sjamillah/git-exercise.git
+ ! [rejected]        main -> main (non-fast-forward)
+error: failed to push some refs to 'https://github.com/sjamillah/git-exercise.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git pull
+error: cannot pull with rebase: You have unstaged changes.
+error: please commit or stash them.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ ls
+README.md
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+remote add origin https://github.com/sjamillah/git-exercise.git
+error: remote origin already exists.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git remote add origin https://github.com/sjamillah/git-exercises.git       
+error: remote origin already exists.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+add .
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+commit -m "git basics exercises"
+On branch main
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+pull
+There is no tracking information for the current branch.
+Please specify which branch you want to rebase against.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> main
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+pull origin main
+fatal: couldn't find remote ref main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+pull main
+fatal: 'main' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push --set-upstream origin main
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 904 bytes | 53.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      main -> main
+Branch 'main' set up to track remote branch 'main' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+checkout -b dev
+Switched to a new branch 'dev'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push origin dev
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote: 
+remote: Create a pull request for 'dev' on GitHub by visiting:
+remote:      https://github.com/sjamillah/git-exercises/pull/new/dev   
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      dev -> dev
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+checkout -b test
+Switched to a new branch 'test'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push origin test
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'test' on GitHub by visiting:        
+remote:      https://github.com/sjamillah/git-exercises/pull/new/test  
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      test -> test
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+checkout dev
+M       README.md
+Switched to branch 'dev'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+branch -D test
+Deleted branch test (was 736641d).
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push --delete test
+fatal: --delete doesn't make sense without any refs
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git push origin --delete test
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+ - [deleted]         test
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+checkout main
+M       README.md
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+add .
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+commit -m "made some changes"
+[main 5b4bb76] made some changes
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 402 bytes | 21.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   736641d..5b4bb76  main -> main
+   `
 2. Bundle 1-Exercise 2
 - Create a new `home.html` file, add some html changes and save them
 - Stash save your current changes
