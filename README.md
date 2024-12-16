@@ -270,3 +270,75 @@ $ code .
 LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
 $ code Gym-Git-Exercise/
 ```
+Continuation:
+``` bash
+git stash list
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add home.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git stash pop
+No stash entries found.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git stash
+Saved working directory and index state WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add about.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git stash
+Saved working directory and index state WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash list
+stash@{0}: WIP on main: 27a004c removed a file
+stash@{1}: WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add team.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash
+Saved working directory and index state WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash list
+stash@{0}: WIP on main: 27a004c removed a file
+stash@{1}: WIP on main: 27a004c removed a file
+stash@{2}: WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash pop stash@{1}
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+
+Dropped stash@{1} (61de795632eaabc61eaf4753131dcf19765fd0d9)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash list
+stash@{0}: WIP on main: 27a004c removed a file
+stash@{1}: WIP on main: 27a004c removed a file
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash pop stash@{1}
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   home.html
+
+Dropped stash@{1} (cec49db83d379040ba8d48a242b4e9b90ee22de7)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "staged and stashed about and home pages"
+[main 5cd91f0] staged and stashed about and home pages
+ 2 files changed, 23 insertions(+)
+ create mode 100644 about.html
+ create mode 100644 home.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git stash pop stash@{0}
+On branch main
+Your branch and 'origin/main' have diverged,
+and have 1 and 1 different commits each, respectively.
+  (use "git pull" to merge the remote branch into yours)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   team.html
+
+Dropped stash@{0} (8eee61ddee072b4449dfb2a4492bab9434096b19)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git reset --hard HEAD
+```
