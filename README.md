@@ -235,3 +235,27 @@ To https://github.com/sjamillah/git-exercise.git
 - Commit the current changes and push them
 - Using stash pop restore the changes of the `team.html` page index
 - Reset the current changes using git reset and go back to the changes without the `team.html` page
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
+On branch main
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)       
+        home.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git stash list
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git 
+ README.md | 209 ++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 208 insertions(+), 1 deletion(-)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ cd ..
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop$ mv Git-Exercise/
+mv: missing destination file operand after 'Git-Exercise/'
+Try 'mv --help' for more information.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop$ mv Git-Exercise/ Gym Git Exercise
+mv: target 'Exercise' is not a directory
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop$ mv Git-Exercise/ Gym-Git-Exercise
+mv: cannot move 'Git-Exercise/' to 'Gym-Git-Exercise': Permission denied
+```
