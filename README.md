@@ -11,5 +11,9 @@ This is a file created locally and it will be used for a series of exercises. Th
 - Push the changes to GitHub
     `git push //to push your changes to the GitHub repo`
 - Create a new branch name dev
+    `git checkout -b <branch-name>`
 - From dev create another branch test
 - Go back to the dev branch and delete the test branch
+`git checkout <branch-name>`
+`git branch -D <branch-name> //to delete the branch`
+`git push origin --delete <branch-name> //pushes the changes and deletes the branch on the repo`
