@@ -259,3 +259,14 @@ mv: target 'Exercise' is not a directory
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop$ mv Git-Exercise/ Gym-Git-Exercise
 mv: cannot move 'Git-Exercise/' to 'Gym-Git-Exercise': Permission denied
 ```
+Solution of changing the folder name
+``` bash
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ mv Git-Exercise/ Gym-Git-Exercise
+
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ code .
+
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ code Gym-Git-Exercise/
+```
