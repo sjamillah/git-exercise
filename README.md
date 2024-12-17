@@ -370,7 +370,7 @@ Dropped stash@{0} (8eee61ddee072b4449dfb2a4492bab9434096b19)
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git reset --hard HEAD
 ```
 3. Bundle 2 Exercise 1
-- - Create a new branch named `ft/bundle-2`
+- Create a new branch named `ft/bundle-2`
 - Add new changes to your project. create a new page named `services.html` and add some changes
 - Commit your changes and create a Pull Request against the `main` branch in your github repository
 - Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
@@ -414,7 +414,7 @@ To https://github.com/sjamillah/git-exercise.git
 Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
 ```
 4. Bundle 2 Exercise 2
-- - Checkout your `main` branch and pull the latest changes
+- Checkout your `main` branch and pull the latest changes
 - Create a new branch named `ft/service-redesign`
 - Add new changes to the `service.html` page
 - commit and push them
@@ -944,6 +944,7 @@ To https://github.com/sjamillah/git-exercise.git
 - Using git rebase, rebase your branch to `main`
 - Add changes to the home page and commit push them
 - Create a PR for the changes.
+
 Solution:
 ``` bash
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
