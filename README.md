@@ -686,3 +686,253 @@ remote: This repository moved. Please use the new location:
 remote:   https://github.com/sjamillah/git-exercises.git
 To https://github.com/sjamillah/git-exercise.git
 ```
+5. Bundle 3 Exercise 1
+- - Create a new branch named `ft/team-page`
+- Create a new html page named `team.html` and add some changes
+- commit and push those changes
+- Create a new PR for the changes
+- Go back to `main` branch (checkout the `main` branch)
+- Create new branch named `ft/contact-page`
+- Go back to the `ft/team-page`
+- With the help of git log look for the last commit and copy its hash
+- Checkout again `ft/contact-page` using git cherry-pick get the changes from the last commit on the `ft/team-page` branch.
+- Add new changes for the contact page and commit, push them
+- Create a new PR for the contact page
+- From the `ft/contact-page` branch create a new branch called `ft/faq-page`
+- Create a new `faq.html` page and add some changes there
+- Commit and push those changes
+- Using git revert, revert the changes of the last commit of the `ft/team-page` branch. (use the commit hash you copied earlier)
+- Push the changes and create a new PR
+
+Solution:
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+g
+it status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout -b ft/team-page
+Switched to a new branch 'ft/team-page'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git status
+On branch ft/team-page
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add team.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "created the teams' page"
+[ft/team-page 0c6eb94] created the teams' page
+ 1 file changed, 22 insertions(+)
+ create mode 100644 team.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/team-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/team-page
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push --set-upstream origin ft/team-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 536 bytes | 23.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/team-page' on GitHub by visiting 
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/team-page
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/team-page -> ft/team-page
+Branch 'ft/team-page' set up to track remote branch 'ft/team-page' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout -b ft/contact-page
+Switched to a new branch 'ft/contact-page'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout ft/team-page
+Switched to branch 'ft/team-page'
+Your branch is up to date with 'origin/ft/team-page'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log
+commit 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d (HEAD -> ft/team-page, origin/ft/team-page)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 15:45:29 2024 +0200
+
+    created the teams' page
+
+commit bf0faa914b6434771bf180c9855daeda5cac9300 (origin/main, main, ft/contact-page)
+Merge: ce17988 2d4b503
+Author: Ssozi Jamillah <127307233+sjamillah@users.noreply.github.com>  
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log -1
+commit 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d (HEAD -> ft/team-page, origin/ft/team-page)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 15:45:29 2024 +0200
+
+    created the teams' page
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout ft/contact-page 
+Switched to branch 'ft/contact-page'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git cherry-pick 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d
+[ft/contact-page 9279a79] created the teams' page
+ Date: Tue Dec 17 15:45:29 2024 +0200
+ 1 file changed, 22 insertions(+)
+ create mode 100644 team.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add services.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git reset services.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git cherry-pick 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d
+On branch ft/contact-page
+You are currently cherry-picking commit 0c6eb94.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)  
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)       
+        contact.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git cherry-pick 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d
+On branch ft/contact-page
+You are currently cherry-picking commit 0c6eb94.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)  
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git diff 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log
+commit 9279a79f19dc2851da80be868e5bddbd08194e1f (HEAD -> ft/contact-page)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 15:45:29 2024 +0200
+
+    created the teams' page
+
+commit bf0faa914b6434771bf180c9855daeda5cac9300 (origin/main, main)    
+Merge: ce17988 2d4b503
+Author: Ssozi Jamillah <127307233+sjamillah@users.noreply.github.com>  
+Date:   Tue Dec 17 15:10:48 2024 +0200
+
+    Merge pull request #2 from sjamillah/ft/service-redesign
+
+    added new changes to the services page
+
+commit ce17988aa80001a2137a28292e9a9094f9ec0c11
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 15:09:16 2024 +0200
+
+    updated the readme file
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "added the contacts page"
+[ft/contact-page 936527a] added the contacts page
+ Date: Tue Dec 17 15:45:29 2024 +0200
+ 1 file changed, 14 insertions(+)
+ create mode 100644 contact.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/contact-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/contact-page
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push --set-upstream origin ft/contact-page
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.01 KiB | 54.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote: 
+remote: Create a pull request for 'ft/contact-page' on GitHub by visiting:
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/contact-page
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/contact-page -> ft/contact-page
+Branch 'ft/contact-page' set up to track remote branch 'ft/contact-page' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout -b ft/faq-page
+Switched to a new branch 'ft/faq-page'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add faq.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add -all
+error: did you mean `--all` (with two dashes)?
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "created the frequently asked questions page"
+[ft/faq-page efe57a1] created the frequently asked questions page
+ 1 file changed, 20 insertions(+)
+ create mode 100644 faq.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/faq-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/faq-page
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push --set-upstream origin ft/faq-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 623 bytes | 56.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/faq-page' on GitHub by visiting: 
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/faq-page
+ * [new branch]      ft/faq-page -> ft/faq-page
+Branch 'ft/faq-page' set up to track remote branch 'ft/faq-page' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git revert 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d
+[ft/faq-page e3d27d2] Revert "created the teams' page"
+ 1 file changed, 22 deletions(-)
+ delete mode 100644 team.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 280 bytes | 56.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+```
