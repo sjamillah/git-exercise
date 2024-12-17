@@ -944,3 +944,92 @@ To https://github.com/sjamillah/git-exercise.git
 - Using git rebase, rebase your branch to `main`
 - Add changes to the home page and commit push them
 - Create a PR for the changes.
+Solution:
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git status
+On branch ft/faq-page
+Your branch is up to date with 'origin/ft/faq-page'.
+
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout -b ft/home-page-redesign
+Switched to a new branch 'ft/home-page-redesign'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "made some changes in the readme file"
+[main 2f31a36] made some changes in the readme file
+ 1 file changed, 10 insertions(+), 2 deletions(-)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 615 bytes | 61.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   e18dfd6..2f31a36  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout ft/home-page-redesign 
+Switched to branch 'ft/home-page-redesign'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log
+commit e3d27d242c9822bef458964d49e4c36377332135 (HEAD -> ft/home-page-redesign, origin/ft/faq-page, ft/faq-page)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 16:21:43 2024 +0200
+
+    Revert "created the teams' page"
+
+    This reverts commit 0c6eb94b4d437684dd1a0eb5b64819a8aa876b3d.      
+
+commit efe57a18f7e3a6be854356742a343a01368186a3
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 16:16:28 2024 +0200
+
+    created the frequently asked questions page
+
+commit 936527a410ba771a164ed07eacaf56df8a0fcff8 (origin/ft/contact-page, ft/contact-page)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 15:45:29 2024 +0200
+
+    added the contacts page
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git rebase main
+Successfully rebased and updated refs/heads/ft/home-page-redesign.     
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "made changes to the home page"
+[ft/home-page-redesign 62d71b8] made changes to the home page
+ 1 file changed, 1 insertion(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/home-page-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/home-page-redesign
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push --set-upstream origin ft/home-page-redesign
+Enumerating objects: 16, done.
+Counting objects: 100% (16/16), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 2.20 KiB | 112.00 KiB/s, done.
+Total 14 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/home-page-redesign' on GitHub by visiting:
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/home-page-redesign
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/home-page-redesign -> ft/home-page-redesign    
+Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redesign' from 'origin'.
+```
