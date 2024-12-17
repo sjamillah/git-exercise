@@ -1033,3 +1033,80 @@ To https://github.com/sjamillah/git-exercise.git
  * [new branch]      ft/home-page-redesign -> ft/home-page-redesign    
 Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redesign' from 'origin'.
 ```
+7. Bundle 4 Exercise 1
+- Checkout the `main` branch
+- Create a new repository on Github
+- Using git remote add the repo to your project as second remote named `git-copy`
+- Make a new changes on the home page
+- Commit the changes
+- Push the changes to the both remotes. the `origin` and `git-copy`
+Solution: 
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add .
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "updated the readme file"
+[main 9401a13] updated the readme file
+ 1 file changed, 90 insertions(+), 1 deletion(-)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.10 KiB | 102.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   2f31a36..9401a13  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git remote add git-copy https://github.com/sjamillah/git-exercises-clone.git^C
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git remote add git-copy https://github.com/sjamillah/git-exercises-clone.git
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git remote
+git-copy
+origin
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add home.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "added content in the homepage"
+[main c607c9d] added content in the homepage
+ 1 file changed, 2 insertions(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 407 bytes | 58.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.  
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   9401a13..c607c9d  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push git-copy
+Enumerating objects: 93, done.
+Counting objects: 100% (93/93), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (84/84), done.
+Writing objects: 100% (93/93), 26.04 KiB | 178.00 KiB/s, done.
+Total 93 (delta 29), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (29/29), done.
+To https://github.com/sjamillah/git-exercises-clone.git
+ * [new branch]      main -> main
+ ```
