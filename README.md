@@ -369,3 +369,42 @@ Changes to be committed:
 Dropped stash@{0} (8eee61ddee072b4449dfb2a4492bab9434096b19)
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git reset --hard HEAD
 ```
+3. Bundle 2 Exercise 1
+Solution
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout -b ft/bundle-2
+Switched to a new branch 'ft/bundle-2'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add services.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "added content in the services page"
+[ft/bundle-2 cfe13b1] added content in the services page
+ 1 file changed, 23 insertions(+)
+ create mode 100644 services.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git status
+On branch ft/bundle-2
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/bundle-2 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/bundle-2
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push --set-upstream origin ft/bundle-2
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 953 bytes | 63.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/bundle-2' on GitHub by visiting: 
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/bundle-2
+remote:
+To https://github.com/sjamillah/git-exercise.git
+Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
+```
