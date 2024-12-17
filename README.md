@@ -21,6 +21,20 @@ This is a file created locally and it will be used for a series of exercises. Th
 
 Solution:
 ``` bash
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ mkdir Git-Exercise
+
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ cd Git-Exercise/
+
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ git init
+Initialized empty Git repository in C:/Users/LENOVO/Desktop/Git-Exercise/.git/
+
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+$ code Gym-Git-Exercise/
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git branch -M main
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
 On branch main
 
