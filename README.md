@@ -1110,3 +1110,178 @@ remote: Resolving deltas: 100% (29/29), done.
 To https://github.com/sjamillah/git-exercises-clone.git
  * [new branch]      main -> main
  ```
+ 8. Bundle 4 Exercise 2
+- Checkout a new branch named `ft/footer`
+- Add some changes to the branch and commit them
+- Add more changes again to the branch and create a second commit
+- Push and create a new PR for the branch
+- Checkout the `main` branch again
+- From there create a new branch named `ft/squashing`
+- Using git merge squash, squash the changes on the `ft/footer` branch
+- Commit the changes with a different commit message such as `footer changes squashing`
+- Push the changes and create a PR
+
+ Solution: 
+ ``` bash
+ jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "updated the readme file on both origins"
+[main c49fc1e] updated the readme file on both origins
+ 1 file changed, 78 insertions(+), 1 deletion(-)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push origin
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 996 bytes | 90.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   c607c9d..c49fc1e  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push git-copy
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 996 bytes | 83.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+To https://github.com/sjamillah/git-exercises-clone.git
+   c607c9d..c49fc1e  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "added footer content"
+[ft/footer c22c44f] added footer content
+ 1 file changed, 11 insertions(+)
+ create mode 100644 footer.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git status
+On branch ft/footer
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git add --all
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "added footer list content"
+[ft/footer e6a0896] added footer list content
+ 1 file changed, 7 insertions(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push
+fatal: The current branch ft/footer has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/footer
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push --set-upstream origin ft/footer
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 780 bytes | 65.00 KiB/s, done.
+Total 6 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:   
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/footer
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/footer -> ft/footer
+Branch 'ft/footer' set up to track remote branch 'ft/footer' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git merge --squash ft/footer 
+Updating c49fc1e..e6a0896
+Fast-forward
+Squash commit -- not updating HEAD
+ footer.html | 18 ++++++++++++++++++
+ 1 file changed, 18 insertions(+)
+ create mode 100644 footer.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log
+commit c49fc1e0fddffeed9358b1d1fe64c93c51f284ae (HEAD -> ft/squashing, origin/main, git-copy/main, main)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 17:15:50 2024 +0200
+
+    updated the readme file on both origins
+
+commit c607c9d2a44d6b1283ce64bcbdd78c7b234327c6
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 17:07:30 2024 +0200
+
+    added content in the homepage
+
+commit 9401a1370bd9f459161a86720f9fa139088230dd
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 16:52:45 2024 +0200
+
+    updated the readme file
+
+commit 2f31a3652d790172a8414940f9aa53ae014aa286
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 16:38:30 2024 +0200
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git commit -m "footer changes squashing"
+[ft/squashing fb3781b] footer changes squashing
+ 1 file changed, 18 insertions(+)
+ create mode 100644 footer.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git log
+commit fb3781bb76a22e47379e9ca686af18dd445344a6 (HEAD -> ft/squashing)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 17:47:37 2024 +0200
+
+    footer changes squashing
+
+commit c49fc1e0fddffeed9358b1d1fe64c93c51f284ae (origin/main, git-copy/main, main)
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 17:15:50 2024 +0200
+
+    updated the readme file on both origins
+
+commit c607c9d2a44d6b1283ce64bcbdd78c7b234327c6
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 17:07:30 2024 +0200
+
+    added content in the homepage
+
+commit 9401a1370bd9f459161a86720f9fa139088230dd
+Author: sjamillah <j.ssozi@alustudent.com>
+Date:   Tue Dec 17 16:52:45 2024 +0200
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git diff ft/squashing 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git status
+On branch ft/squashing
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
+git push origin ft/squashing 
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 515 bytes | 42.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.   
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote: 
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting 
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/squashing
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/squashing -> ft/squashing
+ ```
