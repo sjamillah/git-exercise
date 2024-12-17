@@ -370,6 +370,11 @@ Dropped stash@{0} (8eee61ddee072b4449dfb2a4492bab9434096b19)
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git reset --hard HEAD
 ```
 3. Bundle 2 Exercise 1
+- - Create a new branch named `ft/bundle-2`
+- Add new changes to your project. create a new page named `services.html` and add some changes
+- Commit your changes and create a Pull Request against the `main` branch in your github repository
+- Request a review and make sure your Pull request gets merged (Look for someone to merge your PR)
+
 Solution
 ``` bash
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
@@ -407,4 +412,277 @@ remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/bundle-2
 remote:
 To https://github.com/sjamillah/git-exercise.git
 Branch 'ft/bundle-2' set up to track remote branch 'ft/bundle-2' from 'origin'.
+```
+4. Bundle 2 Exercise 2
+- - Checkout your `main` branch and pull the latest changes
+- Create a new branch named `ft/service-redesign`
+- Add new changes to the `service.html` page
+- commit and push them
+- create a new PR for your changes
+- go back to your `main` branch and add again new changes to your `service.html` page, you can add different changes but make sure to affect the same part(line of code) as you did in the other PR
+- Commit and push those changes
+- Now go back to the Github PR you had created for the `ft/service-redesign`branch, you will then see that you have conflicts with the `main` branch
+- In your project checkout the `ft/service-redesign`branch
+- Compare the `ft/service-redesign`with the `main` branch using git diff and observe the changes
+- Using git merge, merge the `main` branch with `ft/service-redesign` branch and commit and push you changes again
+
+Solution:
+``` bash
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git pull
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git pull
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+error: could not apply de8b279... made updates
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply de8b279... made updates
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git pull
+error: Pulling is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git status
+interactive rebase in progress; onto e76b7b0
+Last command done (1 command done):
+   pick de8b279 made updates
+No commands remaining.
+You are currently rebasing branch 'main' on 'e76b7b0'.
+  (fix conflicts and then run "git rebase --continue")
+  (use "git rebase --skip" to skip this patch)
+  (use "git rebase --abort" to check out the original branch)
+
+Unmerged paths:
+        both modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git pull
+Updating e76b7b0..903224c
+Fast-forward
+ services.html | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ jamillah@DESKTOP-533N1K0jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout -b ft/service-redesign
+Switched to a new branch 'ft/service-redesign'
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ jamillah@DESKTOP-533N1K0jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add services.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "added new
+ changes to the services page"
+[ft/service-redesign 48dce7d] added new changes to the services page
+ 1 file changed, 8 insertions(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push
+fatal: The current branch ft/service-redesign has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/service-redesign
+
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push --set-upstream origin ft/service-redesign
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 481 bytes | 10.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+remote:
+remote: Create a pull request for 'ft/service-redesign' on GitHub by visiting:
+remote:      https://github.com/sjamillah/git-exercises/pull/new/ft/service-redesign
+remote:
+To https://github.com/sjamillah/git-exercise.git
+ * [new branch]      ft/service-redesign -> ft/service-redesign
+Branch 'ft/service-redesign' set up to track remote branch 'ft/service-redesign' from 'origin'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add services.html 
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "added cha
+nges to services in the main branch"
+[main f77b2fc] added changes to services in the main branch
+ 1 file changed, 9 insertions(+)
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 511 bytes | 28.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
+   903224c..f77b2fc  main -> main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git checkout ft/service-redesign
+Switched to branch 'ft/service-redesign'
+Your branch is up to date with 'origin/ft/service-redesign'.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git diff main ft/service-redesign
+diff --git a/services.html b/services.html
+index 4847df2..4263c73 100644
+--- a/services.html
++++ b/services.html
+@@ -19,13 +19,12 @@
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+diff --git a/services.html b/services.html
+index 4847df2..4263c73 100644
+--- a/services.html
++++ b/services.html
+@@ -19,13 +19,12 @@
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
++        </div>^M
+:...skipping...
+diff --git a/services.html b/services.html
+index 4847df2..4263c73 100644
+--- a/services.html
++++ b/services.html
+@@ -19,13 +19,12 @@
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
++        </div>^M
++        <div class="service-box">^M
++            <h2>Technical Support</h2>^M
++            <p>Offering ongoing support and maintenance to keep your systems running smoothly.:...skipping...
+diff --git a/services.html b/services.html
+index 4847df2..4263c73 100644
+--- a/services.html
++++ b/services.html
+@@ -19,13 +19,12 @@
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
++        </div>^M
++        <div class="service-box">^M
++            <h2>Technical Support</h2>^M
++            <p>Offering ongoing support and maintenance to keep your systems running smoothly.</p>^M
+:...skipping...
+diff --git a/services.html b/services.html
+index 4847df2..4263c73 100644
+--- a/services.html
++++ b/services.html
+@@ -19,13 +19,12 @@
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
+             <p>Designing intuitive and high-performance mobile applications for iOS and Android.</p>
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
+         </div>
+         <div class="service-box">
+-        <h2>Digital Marketing</h2>
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
+-                <p>Boosting your business visibility through SEO, PPC campaigns, and social media strategies.</p>
+-                <ul>
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
+-                    <li>Search Engine Optimization</li>
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
+-                    <li>Social Media Management</li>
+-                    <li>Pay-Per-Click Campaigns</li>
+-                </ul>
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
++            <h2>SEO Optimization</h2>^M
++            <p>Improving your website's visibility on search engines with effective SEO strategies.</p>^M
++        </div>^M
++        <div class="service-box">^M
++            <h2>Technical Support</h2>^M
++            <p>Offering ongoing support and maintenance to keep your systems running smoothly.+        <div class="service-box">^M
++            <h2>Technical Support</h2>^M
++            <p>Offering ongoing support and maintenance to keep your systems running smoothly.</p>^M
++            <p>Offering ongoing support and maintenance to keep your systems running smoothly.</p>^M
+         </div>
+</p>^M
+         </div>
+         </div>
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git merge main
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git merge main
+Auto-merging services.html
+Auto-merging services.html
+CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ CONFLICT (content): Merge conflict in services.html
+Automatic merge failed; fix conflicts and then commit the result.      
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git add services.html
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ git commit -m "Merge branch 'main' into ft/service-redesign"
+[ft/service-redesign 2d4b503] Merge branch 'main' into ft/service-redesign
+jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ g
+it push
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 242 bytes | 14.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: This repository moved. Please use the new location:
+remote:   https://github.com/sjamillah/git-exercises.git
+To https://github.com/sjamillah/git-exercise.git
 ```
