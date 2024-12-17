@@ -687,7 +687,7 @@ remote:   https://github.com/sjamillah/git-exercises.git
 To https://github.com/sjamillah/git-exercise.git
 ```
 5. Bundle 3 Exercise 1
-- - Create a new branch named `ft/team-page`
+- Create a new branch named `ft/team-page`
 - Create a new html page named `team.html` and add some changes
 - commit and push those changes
 - Create a new PR for the changes
@@ -936,3 +936,11 @@ remote: This repository moved. Please use the new location:
 remote:   https://github.com/sjamillah/git-exercises.git
 To https://github.com/sjamillah/git-exercise.git
 ```
+6. Bundle 3 Exercise 2
+- Create new branch from the `ft/faq-page` branch named `ft/home-page-redesign`
+- Go back to the `main` branch and make some changes there
+- Commit and push them
+- go back to the `ft/home-page-redesign` branch
+- Using git rebase, rebase your branch to `main`
+- Add changes to the home page and commit push them
+- Create a PR for the changes.
