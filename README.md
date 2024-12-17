@@ -1040,6 +1040,7 @@ Branch 'ft/home-page-redesign' set up to track remote branch 'ft/home-page-redes
 - Make a new changes on the home page
 - Commit the changes
 - Push the changes to the both remotes. the `origin` and `git-copy`
+
 Solution: 
 ``` bash
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Gym-Git-Exercise$ 
