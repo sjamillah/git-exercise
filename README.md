@@ -27,12 +27,12 @@ $ mkdir Git-Exercise
 LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
 $ cd Git-Exercise/
 
-LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop/Git-Exercise (master)
 $ git init
 Initialized empty Git repository in C:/Users/LENOVO/Desktop/Git-Exercise/.git/
 
-LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop (master)
-$ code Gym-Git-Exercise/
+LENOVO@DESKTOP-533N1K0 MINGW64 ~/Desktop/Git-Exercise (master)
+$ code .
 
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git branch -M main
 jamillah@DESKTOP-533N1K0:/mnt/c/Users/LENOVO/Desktop/Git-Exercise$ git status
